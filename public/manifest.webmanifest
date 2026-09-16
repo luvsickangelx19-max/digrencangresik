@@ -1,1 +1,25 @@
-{"name":"Rencang Resik","short_name":"Rencang Resik","start_url":"/","display":"standalone","background_color":"#ffffff","theme_color":"#00a2e8","description":"Document management dan invoice Rencang Resik","icons":[{"src":"/WhatsApp_Image_2026-08-28_at_10.34.00.jpeg","sizes":"192x192","type":"image/jpeg","purpose":"any maskable"},{"src":"/WhatsApp_Image_2026-08-28_at_10.34.00.jpeg","sizes":"512x512","type":"image/jpeg","purpose":"any maskable"}]}
+{
+  "name": "Digital Invoice Rencang Resik",
+  "short_name": "Digital Invoice",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#ffffff",
+  "theme_color": "#00a2e8",
+  "description": "Kelola invoice, DP, dan refund Rencang Resik.",
+  "icons": [
+    {
+      "src": "/cropped_circle_image_(4)_(1).webp",
+      "sizes": "192x192",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/cropped_circle_image_(4)_(1).webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ]
+}
