@@ -356,7 +356,7 @@ button { cursor: pointer; }
 .doc-header-info span { font-weight: 700; text-align: right; padding-right: 3px; }
 .doc-header-info strong { display: flex; align-items: center; height: 23px; padding-left: 6px; border: 1px solid #222; border-bottom: 0; }
 .doc-header-info > div:last-child strong { border-bottom: 1px solid #222; }
-.doc-bill-to { position: absolute; top: 191px; right: 0; width: 50%; min-height: 64px; padding: 0; border-bottom: 0; display: block; }
+.doc-bill-to { position: absolute; top: 140px; right: 0; width: 50%; min-height: 64px; padding: 0; border-bottom: 0; display: block; }
 .doc-bill-heading { height: 23px; padding: 4px 6px; box-sizing: border-box; background: #11afe1; color: white; font-size: 9px; font-weight: 700; }
 .doc-bill-content { padding: 5px 6px; display: flex; flex-direction: column; gap: 4px; }
 .doc-bill-content span { font-size: 8px; }
