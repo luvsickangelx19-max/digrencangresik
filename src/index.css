@@ -360,7 +360,7 @@ button { cursor: pointer; }
 .doc-bill-heading { height: 23px; padding: 4px 6px; box-sizing: border-box; background: #11afe1; color: white; font-size: 9px; font-weight: 700; }
 .doc-bill-content { padding: 5px 6px; display: flex; flex-direction: column; gap: 4px; }
 .doc-bill-content span { font-size: 8px; }
-.doc-table { position: absolute; top: 300px; left: 0; width: 100%; }
+.doc-table { position: absolute; top: 248px; left: 0; width: 100%; }
 .doc-table th, .doc-table td { height: 23px; padding: 3px 6px; font-family: 'Times New Roman', Times, serif; font-size: 8px; border-color: #222; }
 .doc-table thead th { height: 25px; background: #10afe1; border-color: #222; font-size: 8px; }
 .doc-table .col-no { width: 6%; }
@@ -368,7 +368,7 @@ button { cursor: pointer; }
 .doc-table .col-qty { width: 8%; }
 .doc-table .col-price, .doc-table .col-disc, .doc-table .col-amount { width: 19.66%; }
 .doc-empty-row td { height: 23px; border-bottom: 0; }
-.doc-bottom-area { position: absolute; top: 505px; left: 0; width: 100%; min-height: 130px; border-top: 0; display: flex; }
+.doc-bottom-area { position: absolute; top: 453px; left: 0; width: 100%; min-height: 130px; border-top: 0; display: flex; }
 .doc-payment-notes { width: 55%; padding: 0; gap: 10px; border-right: 0; }
 .doc-note-box { border: 1px solid #222; }
 .doc-note-box strong { height: 22px; padding: 4px; box-sizing: border-box; margin: 0; text-align: center; background: #ffb054; color: #111; font-size: 8px; }
@@ -381,7 +381,7 @@ button { cursor: pointer; }
 .doc-total-line { margin-top: 1px; height: 26px !important; border-top: 6px solid #10afe1; background: #ffb054; padding-right: 62px !important; }
 .doc-total-line span, .doc-total-line strong { color: #111; font-weight: 700; }
 .doc-paid-stamp-img { width: 92px; right: 42px; top: 23px; }
-.doc-sign-area { position: absolute; top: 647px; left: 0; width: 100%; min-height: 250px; border-top: 0; padding: 0; }
+.doc-sign-area { position: absolute; top: 595px; left: 0; width: 100%; min-height: 250px; border-top: 0; padding: 0; }
 .doc-qr-wrap { justify-content: flex-start; align-items: flex-start; padding: 0 5px; }
 .doc-qr-image { width: 238px; height: 238px; object-fit: contain; }
 .doc-signing { padding-top: 8px; }
