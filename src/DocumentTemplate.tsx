@@ -69,7 +69,7 @@ export function DocumentTemplate({ doc, branding }: { doc: AnyDoc; branding: Bra
           <div className="doc-bottom-right">
             <div className="doc-totals">
               <div><span>Sub Total</span><strong>{invoiceMoney(subtotal)}</strong></div>
-              <div><span>Diskon</span><strong>{invoiceMoney(totalDiscount)}</strong></div>
+              <div><span>Diskon</span><strong>{totalDiscount ? invoiceMoney(totalDiscount) : ''}</strong></div>
               <div><span>Transportasi</span><strong>{invoiceMoney(doc.transport)}</strong></div>
               <div className="doc-total-line">
                 <span>Total Pelunasan</span>
@@ -98,7 +98,7 @@ export function DocumentTemplate({ doc, branding }: { doc: AnyDoc; branding: Bra
 }
 
 function ItemRow({ item, index }: { item: LineItem; index: number }) {
-  return <tr><td className="center">{index + 1}</td><td>{item.name || '—'}</td><td className="center">{item.qty}</td><td className="right">{invoiceMoney(item.price)}</td><td className="right">{invoiceMoney(item.discount)}</td><td className="right">{invoiceMoney(itemAmount(item))}</td></tr>;
+  return <tr><td className="center">{index + 1}</td><td>{item.name || '—'}</td><td className="center">{item.qty}</td><td className="right">{item.price ? invoiceMoney(item.price) : ''}</td><td className="right">{item.discount ? invoiceMoney(item.discount) : ''}</td><td className="right">{invoiceMoney(itemAmount(item))}</td></tr>;
 }
 
 function invoiceMoney(value: number): string {

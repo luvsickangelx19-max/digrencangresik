@@ -90,8 +90,8 @@ export function DocumentEditor({ doc, branding, onSave, onCancel }: Props) {
                 <span className="item-number">{i + 1}</span>
                 <input className="service-input" value={item.name} onChange={(e) => patchItem(item.id, { name: e.target.value })} placeholder="Jenis layanan" />
                 <input type="number" min={1} value={item.qty} onChange={(e) => patchItem(item.id, { qty: Number(e.target.value) })} />
-                <input type="number" min={0} value={item.price} onChange={(e) => patchItem(item.id, { price: Number(e.target.value) })} />
-                <input type="number" min={0} value={item.discount} onChange={(e) => patchItem(item.id, { discount: Number(e.target.value) })} />
+                <input type="number" min={0} value={item.price || ''} onChange={(e) => patchItem(item.id, { price: Number(e.target.value) })} />
+                <input type="number" min={0} value={item.discount || ''} onChange={(e) => patchItem(item.id, { discount: Number(e.target.value) })} />
                 <strong>{money(itemAmount(item))}</strong>
                 <button className="remove-line" onClick={() => removeItem(item.id)}><X size={15} /></button>
               </div>
