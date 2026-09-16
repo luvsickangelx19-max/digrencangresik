@@ -33,8 +33,8 @@ export function DocumentTemplate({ doc, branding }: { doc: AnyDoc; branding: Bra
         <div className="doc-bill-to">
           <div className="doc-bill-heading">Bill To:</div>
           <div className="doc-bill-content">
-            <span>{doc.customer ? `(${doc.customer})` : '(Penerima)'}</span>
-            <span>(Alamat)</span>
+            <span>{doc.customer || 'Penerima'}</span>
+            <span>{doc.address || 'Alamat'}</span>
           </div>
         </div>
 
@@ -81,7 +81,7 @@ export function DocumentTemplate({ doc, branding }: { doc: AnyDoc; branding: Bra
         </div>
 
         <div className="doc-sign-area">
-          <div className="doc-qr-wrap"><img src="/WhatsApp_Image_2026-09-14_at_06.02.19.jpeg" alt="QRIS Rencang Resik" className="doc-qr-image" /></div>
+          <div className="doc-qr-wrap"><img src="/image.png" alt="QRIS Rencang Resik" className="doc-qr-image" /></div>
           <div className="doc-signing">
             <span>OWNER</span>
             <div className="doc-sign-stack">
@@ -106,5 +106,5 @@ function invoiceMoney(value: number): string {
 }
 
 function InfoRow({ label, value }: { label: string; value: string }) {
-  return <div><span>{label}</span><b>:</b><strong>{value}</strong></div>;
+  return <div><span>{label}</span><strong>{value}</strong></div>;
 }

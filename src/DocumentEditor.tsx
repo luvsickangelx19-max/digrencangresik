@@ -54,6 +54,9 @@ export function DocumentEditor({ doc, branding, onSave, onCancel }: Props) {
             <Field label="Nama Customer">
               <input value={draft.customer} onChange={(e) => patch({ customer: e.target.value })} placeholder="Nama pelanggan" />
             </Field>
+            <Field label="Alamat">
+              <input value={draft.address || ''} onChange={(e) => patch({ address: e.target.value })} placeholder="Alamat pelanggan" />
+            </Field>
             <Field label="Tempo">
               <input value={draft.tempo} onChange={(e) => patch({ tempo: e.target.value })} />
             </Field>

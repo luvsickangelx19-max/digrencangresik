@@ -1,11 +1,8 @@
 import { useEffect, useState } from 'react';
-import { LayoutDashboard, Receipt, CircleDollarSign, Archive, Sparkles, Bell, Settings2 } from 'lucide-react';
-import { type AnyDoc, type ThankYouCard, type AnnouncementDoc, type Branding, type NumberingConfig, type ModuleKey, defaultBranding, defaultNumbering } from './types';
+import { LayoutDashboard, Receipt, CircleDollarSign, Archive } from 'lucide-react';
+import { type AnyDoc, type Branding, type NumberingConfig, type ModuleKey, defaultBranding, defaultNumbering } from './types';
 import { readStore, writeStore, uid } from './lib';
 import { DocumentWorkspace } from './DocumentWorkspace';
-import { ThankYouModule } from './ThankYouModule';
-import { AnnouncementModule } from './AnnouncementModule';
-import { SettingsModule } from './SettingsModule';
 import { Dashboard } from './Dashboard';
 
 const sampleItems = [
@@ -24,14 +21,10 @@ const navItems: { key: ModuleKey; label: string; icon: typeof Receipt }[] = [
   { key: 'invoice', label: 'Invoice', icon: Receipt },
   { key: 'dp', label: 'DP', icon: CircleDollarSign },
   { key: 'refund', label: 'Refund', icon: Archive },
-  { key: 'thankyou', label: 'Thank You', icon: Sparkles },
-  { key: 'announcement', label: 'Pengumuman', icon: Bell },
-  { key: 'settings', label: 'Pengaturan', icon: Settings2 },
 ];
 
 const titleMap: Record<ModuleKey, string> = {
   dashboard: 'Ringkasan', invoice: 'Invoice', dp: 'DP', refund: 'Refund',
-  thankyou: 'Say Thank You', announcement: 'Pengumuman', settings: 'Pengaturan',
 };
 
 function App() {
@@ -39,8 +32,6 @@ function App() {
   const [invoices, setInvoices] = useState<AnyDoc[]>(() => readStore('rr-invoices', [sampleInvoice]));
   const [dps, setDps] = useState<AnyDoc[]>(() => readStore('rr-dps', []));
   const [refunds, setRefunds] = useState<AnyDoc[]>(() => readStore('rr-refunds', []));
-  const [thankYouCards, setThankYouCards] = useState<ThankYouCard[]>(() => readStore('rr-thankyou', []));
-  const [announcements, setAnnouncements] = useState<AnnouncementDoc[]>(() => readStore('rr-announcements', []));
   const [branding, setBranding] = useState<Branding>(() => {
     const stored = readStore<Branding>('rr-branding', defaultBranding);
     return { ...defaultBranding, ...stored, logo: stored.logo || defaultBranding.logo };
@@ -50,8 +41,6 @@ function App() {
   useEffect(() => writeStore('rr-invoices', invoices), [invoices]);
   useEffect(() => writeStore('rr-dps', dps), [dps]);
   useEffect(() => writeStore('rr-refunds', refunds), [refunds]);
-  useEffect(() => writeStore('rr-thankyou', thankYouCards), [thankYouCards]);
-  useEffect(() => writeStore('rr-announcements', announcements), [announcements]);
   useEffect(() => writeStore('rr-branding', branding), [branding]);
   useEffect(() => writeStore('rr-numbering', numbering), [numbering]);
   useEffect(() => { if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js').catch(() => {}); }, []);
@@ -88,9 +77,6 @@ function App() {
         {active === 'invoice' && <DocumentWorkspace kind="invoice" docs={invoices} setDocs={setInvoices} settings={{ branding, numbering }} setSettings={setSettings} branding={branding} />}
         {active === 'dp' && <DocumentWorkspace kind="dp" docs={dps} setDocs={setDps} settings={{ branding, numbering }} setSettings={setSettings} branding={branding} />}
         {active === 'refund' && <DocumentWorkspace kind="refund" docs={refunds} setDocs={setRefunds} settings={{ branding, numbering }} setSettings={setSettings} branding={branding} />}
-        {active === 'thankyou' && <ThankYouModule cards={thankYouCards} setCards={setThankYouCards} branding={branding} />}
-        {active === 'announcement' && <AnnouncementModule announcements={announcements} setAnnouncements={setAnnouncements} branding={branding} />}
-        {active === 'settings' && <SettingsModule branding={branding} setBranding={setBranding} numbering={numbering} setNumbering={setNumbering} />}
       </main>
       <nav className="bottom-nav">
         {navItems.map(({ key, label, icon: Icon }) => (

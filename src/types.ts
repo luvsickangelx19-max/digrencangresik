@@ -2,7 +2,7 @@ export type InvoiceStatus = 'DRAFT' | 'SENT' | 'BELUM LUNAS' | 'LUNAS' | 'CANCEL
 export type DPStatus = 'DRAFT' | 'SENT' | 'LUNAS' | 'CANCELLED';
 export type RefundStatus = 'REQUESTED' | 'APPROVED' | 'PROCESSED' | 'CANCELLED';
 export type DocKind = 'invoice' | 'dp' | 'refund';
-export type ModuleKey = 'dashboard' | 'invoice' | 'dp' | 'refund' | 'thankyou' | 'announcement' | 'settings';
+export type ModuleKey = 'dashboard' | 'invoice' | 'dp' | 'refund';
 
 export type LineItem = { id: string; name: string; qty: number; price: number; discount: number };
 
@@ -11,6 +11,7 @@ export type BaseDoc = {
   number: string;
   date: string;
   customer: string;
+  address: string;
   customerId: string;
   poNumber: string;
   tempo: string;
@@ -24,32 +25,6 @@ export type Invoice = BaseDoc & { kind: 'invoice'; status: InvoiceStatus };
 export type DP = BaseDoc & { kind: 'dp'; status: DPStatus; relatedInvoice: string; paymentMethod: string };
 export type Refund = BaseDoc & { kind: 'refund'; status: RefundStatus; relatedInvoice: string; reason: string; paymentMethod: string };
 export type AnyDoc = Invoice | DP | Refund;
-
-export type ThankYouCard = {
-  id: string;
-  customer: string;
-  date: string;
-  message: string;
-  service: string;
-  template: string;
-  font: string;
-  color: string;
-  size: string;
-  createdAt: number;
-};
-
-export type AnnouncementDoc = {
-  id: string;
-  title: string;
-  date: string;
-  content: string;
-  category: string;
-  font: string;
-  color: string;
-  size: string;
-  published: boolean;
-  createdAt: number;
-};
 
 export type Customer = {
   id: string;

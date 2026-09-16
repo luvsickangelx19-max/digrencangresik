@@ -10,7 +10,6 @@ type Props = {
 };
 
 export function Dashboard({ invoices, dps, refunds, onNavigate }: Props) {
-  const totalRevenue = invoices.filter((i) => i.kind === 'invoice' && i.status === 'LUNAS').reduce((s, d) => s + docTotal(d), 0);
   const totalDP = dps.reduce((s, d) => s + docTotal(d), 0);
   const totalRefund = refunds.reduce((s, d) => s + docTotal(d), 0);
   const lunas = invoices.filter((i) => i.status === 'LUNAS').length;
@@ -26,7 +25,6 @@ export function Dashboard({ invoices, dps, refunds, onNavigate }: Props) {
         <MiniStat label="Total Invoice" value={String(invoices.length).padStart(2, '0')} icon={<FileText size={17} />} />
         <MiniStat label="Invoice Lunas" value={String(lunas).padStart(2, '0')} icon={<Check size={17} />} tone="green" />
         <MiniStat label="Belum Lunas" value={String(belum).padStart(2, '0')} icon={<CircleDollarSign size={17} />} tone="orange" />
-        <MiniStat label="Total Revenue" value={money(totalRevenue)} icon={<CircleDollarSign size={17} />} wide />
       </div>
       <div className="summary-row" style={{ marginTop: 12 }}>
         <MiniStat label="Total DP" value={money(totalDP)} icon={<CircleDollarSign size={17} />} />

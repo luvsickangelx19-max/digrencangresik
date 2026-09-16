@@ -243,7 +243,7 @@ button { cursor: pointer; }
 }
 .doc-header-info { display: flex; flex-direction: column; flex: 1; }
 .doc-header-info > div {
-  height: 14px; display: grid; grid-template-columns: 38% 4% 1fr; align-items: center;
+  height: 14px; display: grid; grid-template-columns: 42% 58%; align-items: center;
   border-bottom: 1px solid #ddd; padding-left: 5px;
 }
 .doc-header-info > div:last-child { border-bottom: 0; }
@@ -311,7 +311,7 @@ button { cursor: pointer; }
 .doc-company span { font-size: 5px; color: #333; line-height: 1.35; }
 .doc-title-block { border-left: 1px solid #111; }
 .doc-title-block h1 { padding: 9px 10px 7px; font-size: 17px; text-transform: none; line-height: 1; color: #f6a947; border-bottom: 1px solid #111; }
-.doc-header-info > div { height: 19px; grid-template-columns: 37% 4% 1fr; border-bottom: 1px solid #111; padding: 0 7px; }
+.doc-header-info > div { height: 19px; grid-template-columns: 42% 58%; border-bottom: 1px solid #111; padding: 0 7px; }
 .doc-header-info span, .doc-header-info strong { font-size: 5.5px; }
 .doc-header-info span { font-weight: 700; }
 .doc-bill-to { min-height: 48px; padding: 8px 9px 7px; border-bottom: 2px solid #111; gap: 2px; }
@@ -350,11 +350,10 @@ button { cursor: pointer; }
 .doc-title-block { position: absolute; top: 0; right: 0; width: 50%; height: 154px; border-left: 0; }
 .doc-title-block h1 { padding: 0 8px 4px; height: 42px; font-family: 'Times New Roman', Times, serif; font-size: 23px; text-transform: none; line-height: 1; text-align: right; color: #10afe1; border-bottom: 0; }
 .doc-header-info { position: absolute; right: 0; top: 42px; width: 100%; border: 0; }
-.doc-header-info > div { height: 23px; grid-template-columns: 38% 4% 58%; border-bottom: 0; padding: 0; }
+.doc-header-info > div { height: 23px; grid-template-columns: 42% 58%; border-bottom: 0; padding: 0; }
 .doc-header-info > div:last-child { border-bottom: 0; }
 .doc-header-info span, .doc-header-info strong { font-family: 'Times New Roman', Times, serif; font-size: 8px; }
 .doc-header-info span { font-weight: 700; text-align: right; padding-right: 3px; }
-.doc-header-info b { font-weight: 700; text-align: center; }
 .doc-header-info strong { display: flex; align-items: center; height: 23px; padding-left: 6px; border: 1px solid #222; border-bottom: 0; }
 .doc-header-info > div:last-child strong { border-bottom: 1px solid #222; }
 .doc-bill-to { position: absolute; top: 191px; right: 0; width: 50%; min-height: 64px; padding: 0; border-bottom: 0; display: block; }
